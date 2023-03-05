@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Quote Generator</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			text-align: center;
+		}
+
+		.quote {
+			font-size: 24px;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Random Quote Generator</h1>
+	<button onclick="generateQuote()">Generate Quote</button>
+	<div class="quote" id="quote"></div>
+
+	<script>
+		var quotes = [
+			"Life is 10% what happens to us and 90% how we react to it. - Charles R. Swindoll",
+			"Believe you can and you're halfway there. - Theodore Roosevelt",
+			"Strive not to be a success, but rather to be of value. - Albert Einstein",
+			"Two roads diverged in a wood, and I—I took the one less traveled by, And that has made all the difference. - Robert Frost"
+		];
+
+		function generateQuote() {
+			var randomIndex = Math.floor(Math.random() * quotes.length);
+			var quoteElement = document.getElementById("quote");
+			quoteElement.innerHTML = quotes[randomIndex];
+		}
+	</script>
+</body>
+</html>
